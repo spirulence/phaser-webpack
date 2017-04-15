@@ -1,2 +1,2 @@
-require("script!../node_modules/phaser/dist/phaser.js");
-require("./styles/main.css")
+require("script-loader!../node_modules/phaser-ce/build/phaser.js");
+require("./styles/main.css");

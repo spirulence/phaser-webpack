@@ -1,37 +1,39 @@
 {
   "name": "phaser-webpack",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "prebuild": "npm run clean -s",
     "assets": "mkdirp dist && ncp assets dist/assets",
     "build": "npm run assets && webpack -p",
-    "open:dev": "opener http://localhost:8080/webpack-dev-server/",
-    "serve": "webpack-dev-server",
-    "start": "parallelshell 'npm run serve' 'npm run open:dev'",
-    "deploy": "npm run build && node deploy.js"
+    "dev-serve": "lite-server --baseDir=dist"
   },
-  "author": "Geoffroy Warin",
+  "author": {
+    "name": "Geoffroy Warin"
+  },
+  "contributors": [
+    {
+      "name": "Cameron Seebach",
+      "email": "pannewb@gmail.com"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
-    "awesome-typescript-loader": "^0.3.0-rc.4",
-    "css-loader": "^0.12.0",
-    "extract-text-webpack-plugin": "^0.7.1",
-    "gh-pages": "^0.2.0",
-    "html-webpack-plugin": "^1.3.0",
-    "mkdirp": "^0.5.0",
-    "ncp": "^2.0.0",
-    "opener": "^1.4.1",
-    "parallelshell": "^1.1.1",
-    "rimraf": "^2.3.3",
-    "script-loader": "^0.6.1",
-    "style-loader": "^0.12.2",
-    "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2"
+    "css-loader": "0.28.0",
+    "extract-text-webpack-plugin": "2.1.0",
+    "html-webpack-plugin": "2.28.0",
+    "lite-server": "2.3.0",
+    "mkdirp": "0.5.0",
+    "ncp": "2.0.0",
+    "rimraf": "2.6.1",
+    "script-loader": "0.7.0",
+    "style-loader": "0.16.1",
+    "ts-loader": "2.0.3",
+    "typescript": "2.2.2",
+    "webpack": "2.4.1"
   },
   "dependencies": {
-    "phaser": "^2.3.0"
+    "phaser-ce": "2.7.6"
   }
 }
